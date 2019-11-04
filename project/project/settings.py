@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'oc(i@z!j!+5_e$86kt#j1m@$b209vi^yc&5&5oeeg)c#t@-57g'
 
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
@@ -121,3 +121,8 @@ LOGGING = {
     },
 }
 
+#local_settingsを読み込み
+try:
+    from .local_settings import *
+except ImportError:
+    pass
