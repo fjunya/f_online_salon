@@ -1,0 +1,15 @@
+iversion: '2'
+services:
+  mysql:
+    image: mysql
+    build: ./mysql
+    container_name: f_online_salon_db
+    volumes:
+      - data:/var/lib/mysql_f_online_salon
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      TZ: Asia/Tokyo
+    ports:
+      - 3306:3306
+volumes:
+  data:
